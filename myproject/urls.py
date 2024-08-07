@@ -19,10 +19,11 @@ from django.urls import path
 from main.views import main
 from order.views import order
 from authorization.views import authorization
-
+from compilation.views import compilation
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('main/', main),
     path('order/', order),
-    path('authorization/', authorization)
+    path('authorization/', authorization),
+    path('compilation/', compilation),
 ]

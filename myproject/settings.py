@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'main.apps.MainConfig',
     'order.apps.OrderConfig',
     'authorization.apps.AuthorizationConfig',
+    'compilation.apps.CompilationConfig',
 ]
 
 MIDDLEWARE = [
