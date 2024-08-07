@@ -1,4 +1,5 @@
 <!doctype html>
+{% load static %}
 <html>
   <head>
     <meta charset="utf-8">
@@ -33,14 +34,14 @@
           </div>
         </div>
       </nav>
-        <h1 style="text-align: center; height: 150px;padding-top: 45px; background-image: url(img/background_track.jpg); background-position:centers;  background-repeat: no-repeat;
+        <h1 style="text-align: center; height: 150px;padding-top: 45px; background-image: url({% static 'img/background_track.jpg' %}); background-position:centers;  background-repeat: no-repeat;
         ">
           Добро пожаловать на главную страницу!
         </h1>
        
-        <div class="card-group" style="padding-top: 45px">
+        <div class="card-group">
           <div class="card">
-            <img src="img/small_car_1.jpg"  class="card-img-top"  alt="...">
+            <img src="{% static 'img/small_car_1.jpg' %}"  class="card-img-top"  alt="...">
             <div class="card-body">
               <h5 class="card-title" style="text-align: center"> Малогабаритная перевозка</h5>
               <p class="card-text">
@@ -60,7 +61,7 @@
             </div>
           </div>
           <div class="card">
-            <img src="img/average_car.jpg" class="card-img-top" style="background-size:contain" alt="...">
+            <img src="{% static 'img/average_car.jpg' %}" class="card-img-top" style="background-size:contain" alt="...">
             <div class="card-body">
               <h5 class="card-title" style="text-align: center">Среднегабаритная перевозка</h5>
               <p class="card-text">
@@ -80,7 +81,7 @@
             </div>
           </div>
           <div class="card">
-            <img src="img/big_car_1.jpg" class="card-img-top" alt="...">
+            <img src="{% static 'img/big_car_1.jpg' %}" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title" style="text-align: center">Крупногабаритная перевозка</h5>
               <p class="card-text">
