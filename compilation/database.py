@@ -45,16 +45,15 @@ class PGOrdersManager(DBManager):
         ...
 
     @staticmethod
-    def read(connect, order: Order) -> list[Order]:
+    def read(connect) -> list[Order]:
 
         try:
             with connect.cursor() as cursor:
 
-                params = ()
                 query = """SELECT * 
                            FROM orders
                         """
-                cursor.execute(query, params)
+                cursor.execute(query)
                 data = cursor.fetchall()
 
                 if data:
@@ -62,7 +61,7 @@ class PGOrdersManager(DBManager):
                     container.create_list_orders(data)
                     return container.get_list_orders()
                 else:
-                    raise Exception(f"Не найдена запись с параметрами {params}")
+                    raise Exception(f"Не найдена запись с параметрами")
         except (Exception, psycopg2.Error) as e:
             print(e)
 
