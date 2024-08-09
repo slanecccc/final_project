@@ -3,16 +3,17 @@
 {% load static %}
 
 {% block content %}
+{% for orders in data %}
 <div class="container text-center" style="padding: 50px">
   <div class="row align-items-center">
     <div class="col">
       <div class="card" style="width: 18rem;">
   <div class="card-body">
-    <h5 class="card-title">Заказ №</h5>
+    <h5 class="card-title">Заказ №{{orders.num_order}}</h5>
     <p class="card-text">
       <ul>
         <li>Заказчик: ФИО</li>
-        <li>Номер телефона: </li>
+        <li>Номер телефона:{{orders.phone}} </li>
         <li>Вес груза: </li>
         <li>Адрес доставки: </li>
         <li>Рарзмер груза: </li>
@@ -21,6 +22,7 @@
     <a href="#" class="btn btn-primary">Найти машину</a>
   </div>
 </div>
+      {% endfor %}
     </div>
     <div class="col">
       <div class="card" style="width: 18rem;">
@@ -28,8 +30,8 @@
     <h5 class="card-title">Заказ №</h5>
        <p class="card-text">
       <ul>
-        <li>Заказчик: ФИО</li>
-        <li>Номер телефона: </li>
+        <li>Заказчик: {{data.surname_client}}</li>
+        <li>Номер телефона: {{ data.phone }}</li>
         <li>Вес груза: </li>
         <li>Адрес доставки: </li>
         <li>Рарзмер груза: </li>
