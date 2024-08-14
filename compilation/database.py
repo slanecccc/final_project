@@ -40,9 +40,19 @@ class DBManager(ABC):
 class PGOrdersManager(DBManager):
 
     @staticmethod
-    def create(connect, order: Order):
-        # Вызвать запрос вставки данных из объекта в таблицу
-        ...
+    def create(connect, order: Order) -> None:
+        try:
+            with connect.cursor() as cursor:
+                params = (order.surname_client, order.name_client, order.patronymic_client, order.phone, order.city,
+                          order.street, order.num_home, order.capacity, order.wight, order.height)
+                query = """ 
+                        INSERT INTO orders(surname_client, name_client, patronymic_client, phone_client, city, street, num_home, capacity, width, height)
+                        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                        
+                        """
+                cursor.execute(query, params)
+        except (Exception, psycopg2.Error) as e:
+            print(e)
 
     @staticmethod
     def read(connect) -> list[Order]:
@@ -50,7 +60,7 @@ class PGOrdersManager(DBManager):
         try:
             with connect.cursor() as cursor:
 
-                query = """SELECT * 
+                query = """SELECT surname_client, name_client, patronymic_client, phone_client, city, street, num_home, capacity, width, height 
                            FROM orders
                         """
                 cursor.execute(query)
@@ -67,10 +77,10 @@ class PGOrdersManager(DBManager):
 
     @staticmethod
     def update(connect, index_old_order: int, new_order: Order):
-        # Обновить данные о книге в таблице
+        # Обновить данные о заказе в таблице
         ...
 
     @staticmethod
     def delete(connect, order: Order):
-        # Удалить девайс
+        # Удалить заказ
         ...

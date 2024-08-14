@@ -4,7 +4,7 @@ from abc import ABC, abstractmethod
 class Order:
 
     def __init__(self):
-        self.num_order = None
+        # self.num_order = None
         self.surname_client = None
         self.name_client = None
         self.patronymic_client = None
@@ -23,9 +23,9 @@ class Builder(ABC):
     def create(self):
         ...
 
-    @abstractmethod
-    def set_num_order(self, num_order):
-        ...
+    # @abstractmethod
+    # def set_num_order(self, num_order):
+    #     ...
 
     @abstractmethod
     def set_surname_client(self, surname_client):
@@ -78,8 +78,8 @@ class OrderBuilder(Builder):
     def create(self):
         self._order = Order()
 
-    def set_num_order(self, num_order):
-        self._order.num_order = num_order
+    # def set_num_order(self, num_order):
+    #     self._order.num_order = num_order
 
     def set_surname_client(self, surname_client):
         self._order.surname_client = surname_client
@@ -125,17 +125,17 @@ class OrderCreator:
 
     def make(self, order: tuple) -> Order:
         self._builder.create()
-        self._builder.set_num_order(order[0])
-        self._builder.set_surname_client(order[1])
-        self._builder.set_name_client(order[2])
-        self._builder.set_patronymic_client(order[3])
-        self._builder.set_phone(order[4])
-        self._builder.set_city(order[5])
-        self._builder.set_street(order[6])
-        self._builder.set_num_home(order[7])
-        self._builder.set_capacity(order[8])
-        self._builder.set_wight(order[9])
-        self._builder.set_height(order[10])
+        # self._builder.set_num_order(order[0])
+        self._builder.set_surname_client(order[0])
+        self._builder.set_name_client(order[1])
+        self._builder.set_patronymic_client(order[2])
+        self._builder.set_phone(order[3])
+        self._builder.set_city(order[4])
+        self._builder.set_street(order[5])
+        self._builder.set_num_home(order[6])
+        self._builder.set_capacity(order[7])
+        self._builder.set_wight(order[8])
+        self._builder.set_height(order[9])
         return self._builder.get_order()
 
 

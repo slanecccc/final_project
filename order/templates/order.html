@@ -5,46 +5,47 @@
     {% block content %}
     <div class="container">
         {% block searchform %}
- <form class="row g-3">
+ <form method="POST" action="send-order/" class="row g-3">
+     {% csrf_token %}
   <div class="col-md-6">
     <label class="form-label">Фамилия</label>
-    <input type="text" class="form-control" placeholder="Иванов">
+    <input name="surname" type="text" class="form-control" placeholder="Иванов">
   </div>
   <div class="col-md-6">
-    <label  class="form-label">Имя</label>
-    <input type="text" class="form-control" placeholder="Иван">
+    <label class="form-label">Имя</label>
+    <input name="name" type="text" class="form-control" placeholder="Иван">
   </div>
      <div class="col-md-6">
     <label  class="form-label">Отчество</label>
-    <input type="text" class="form-control" placeholder="Сергеевич">
+    <input name="patronymic" type="text" class="form-control" placeholder="Сергеевич">
   </div>
  <div class="col-md-6">
     <label for="inputEmail4" class="form-label">Номер телефона</label>
-    <input type="email" class="form-control" id="inputEmail4" placeholder="89046655544">
+    <input name="phone" class="form-control" placeholder="89046655544">
   </div>
 <div class="col-md-6">
     <label for="inputCity" class="form-label">Город</label>
-    <input type="text" class="form-control" id="inputCity" placeholder="Брянск">
+    <input name="city" type="text" class="form-control" id="inputCity" placeholder="Брянск">
   </div>
   <div class="col-md-6">
     <label for="inputState" class="form-label">Улица</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="Проспект Ленина">
+    <input name="street" type="text" class="form-control" id="inputAddress" placeholder="Проспект Ленина">
   </div>
   <div class="col-md-1">
     <label for="inputState" class="form-label">Дом</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="12/2">
+    <input name="house" type="text" class="form-control" id="inputAddress" placeholder="12/2">
   </div>
   <div class="row g-1">
     <label for="inputZip" class="form-label">Вес груза</label>
-    <input type="text" class="form-control" id="inputZip" placeholder="кг">
+    <input name="capacity" type="text" class="form-control" id="inputZip" placeholder="кг">
   </div>
      <div class="row g-1">
-    <label for="inputZip" class="form-label">Высота груза</label>
-    <input type="text" class="form-control" id="inputZip" placeholder="См">
+    <label for="inputZip" class="form-label">Ширина груза</label>
+    <input name="width" type="text" class="form-control" id="inputZip" placeholder="См">
   </div>
        <div class="row g-1">
-    <label for="inputZip" class="form-label">Ширина груза</label>
-    <input type="text" class="form-control" id="inputZip" placeholder="См">
+    <label for="inputZip" class="form-label">Высота груза</label>
+    <input name="height"  type="text" class="form-control" id="inputZip" placeholder="См">
   </div>
 
   <div class="col-12">

@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from main.views import main
-from order.views import order
+from order.views import order, send_order
 from authorization.views import authorization
 from compilation.views import compilation
 urlpatterns = [
@@ -26,4 +26,5 @@ urlpatterns = [
     path('order/', order),
     path('authorization/', authorization),
     path('compilation/', compilation),
+    path('order/send-order/', send_order),
 ]
