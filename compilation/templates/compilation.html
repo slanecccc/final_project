@@ -5,13 +5,16 @@
 {% block content %}
 
 <div class="container text-center" style="padding: 50px">
+
   {% for orders in data %}
+
   <div class="row align-items-center">
 
     <div class="col">
       <div class="card" style="width: 18rem;">
+
         <div class="card-body">
-            <h5 class="card-title">Заказ № 1</h5>
+            <h5 class="card-title">Заказ</h5>
             <p class="card-text">
               <ul>
                 <li>Заказчик: {{ orders.surname_client}}
@@ -27,8 +30,9 @@
               </p>
             <a href="#" class="btn btn-primary">Найти машину</a>
       </div>
+
 </div>
-      {% endfor %}
+        {% endfor %}
     </div>
 
     </div>

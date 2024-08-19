@@ -34,4 +34,5 @@ def send_order(request: HttpRequest):
         order = OrderCreator(order_builder)
         make_order = order.make(params_order)
         PGOrdersManager.create(connect, make_order)
+        connect.commit()
     return render(request, 'main.html')

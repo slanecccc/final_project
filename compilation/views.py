@@ -22,6 +22,7 @@ def compilation(request: HttpRequest):
     # container = OrdersContainer()
     # container.create_list_orders(cursor.fetchall())
     data = PGOrdersManager.read(connect)
+    # num_orders = PGOrdersManager.number_order(connect)
     # count = len(data) if data is not None else 0
 
     context = {
