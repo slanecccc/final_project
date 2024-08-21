@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'order.apps.OrderConfig',
     'authorization.apps.AuthorizationConfig',
     'compilation.apps.CompilationConfig',
+    'staff.apps.StaffConfig'
 ]
 
 MIDDLEWARE = [

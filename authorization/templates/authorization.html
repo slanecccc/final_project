@@ -5,15 +5,15 @@
 {% block content %}
 <div class="container">
      {% block searchform %}
-    <form>
+    <form method="POST" action="send-staff/">
+        {% csrf_token %}
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Адрес электронной почты</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text">Мы никогда никому не передадим вашу электронную почту.</div>
+    <label class="form-label">Логин</label>
+    <input  name="login" type="text" class="form-control" aria-describedby="emailHelp">
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Пароль</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
+    <input name="password" type="password" class="form-control" id="exampleInputPassword1">
   </div>
   <button type="submit" class="btn btn-primary">Отправить</button>
 </form>

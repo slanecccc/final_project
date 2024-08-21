@@ -18,8 +18,9 @@ from django.contrib import admin
 from django.urls import path
 from main.views import main
 from order.views import order, send_order
-from authorization.views import authorization
+from authorization.views import authorization, staff_authorization
 from compilation.views import compilation
+from staff.views import staff
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('main/', main),
@@ -27,4 +28,6 @@ urlpatterns = [
     path('authorization/', authorization),
     path('compilation/', compilation),
     path('order/send-order/', send_order),
+    path('staff/', staff),
+    path('authorization/send-staff/', staff_authorization)
 ]
