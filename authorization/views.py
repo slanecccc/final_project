@@ -25,6 +25,9 @@ def staff_authorization(request: HttpRequest):
         data = PGODataManager.read(connect, data_staff)
         if data:
             return render(request, 'staff.html')
+        else:
+            return render(request, 'not-authorization.html')
+
 
 
 

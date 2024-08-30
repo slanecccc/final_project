@@ -29,5 +29,5 @@ urlpatterns = [
     path('compilation/', compilation),
     path('order/send-order/', send_order),
     path('staff/', staff),
-    path('authorization/send-staff/', staff_authorization)
+    path('authorization/send-staff/', staff_authorization),
 ]
